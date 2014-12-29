@@ -1,4 +1,4 @@
-popeye
+Farnsworth
 ======
 ![image](http://i.kinja-img.com/gawker-media/image/upload/s--PB7pNYVg--/kkj8j5tmwk4wibl9lvrd.jpg)
 
