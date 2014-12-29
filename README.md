@@ -1,6 +1,6 @@
 popeye
 ======
-![image](http://fc09.deviantart.net/fs70/i/2014/020/a/b/popeye_the_sailor_man_minimalistic_wallpaper_no_lo_by_komankk-d730ix9.png)
+![image](http://i.kinja-img.com/gawker-media/image/upload/s--PB7pNYVg--/kkj8j5tmwk4wibl9lvrd.jpg)
 
 1. Make sure you have node installed from here : http://nodejs.org/. 
 
