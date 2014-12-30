@@ -1,19 +1,40 @@
 var express = require('express');
 var router = express.Router();
+var feedly = require('../model/feedlyModel');
 
 
 /* GET home page. */
-router.get('/', function(req, res) {
-  //generate a unique requestId
-  req.log.info({workerId: req.workerId}, 'hey hey');
-  //process.nextTick(function(){
-  //  throw new Error('Kaboom!'); });
-  res.send(new Date().toJSON());
+router.get('/categories', function (req, res) {
+    feedly.getCategories(function (err, result) {
+        if (err) {
+            req.log.error(err);
+            res.status(500).send();
+        } else {
+            res.json(result);
+        }
+    });
 });
 
-//router.get('/emailAli', function(req, res){
-//
-//  emailer.sendPaymentSuccessEmail({userEmail: 'fathalian@outlook.com', userName : 'dragon', userTrack: 'dummy', trackId: 'frontend'}, function(){});
-//  res.status(200).send('Spamming fathalian@outlook.com');
-//});
+router.get('/categories/:catId', function (req, res) {
+
+    var catId = req.params.catId;
+    var continuation = req.query.continuation || '0';
+    feedly.getNews(catId, continuation, function (err, result) {
+
+        if (err) {
+            req.log.error(err);
+            if (err.notFound) {
+                res.status(404).send('Category ' + catId + ' does not exist');
+            } else {
+                res.status(500).send();
+            }
+        } else {
+
+            res.json(result);
+        }
+    });
+
+
+});
+
 module.exports = router;
