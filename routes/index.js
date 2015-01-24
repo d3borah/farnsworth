@@ -7,8 +7,15 @@ router.get('/', function(req, res){
     res.send('Good News Everyone its ' + new Date().toString());
 });
 
+
 router.get('/healthCheck', function(req, res){
     res.status(200).send();
+});
+
+router.get('/version', function(req, res){
+    var GIT_VERSION = '__GIT_VERSION__';
+    req.log.info('version');
+    res.send(GIT_VERSION);
 });
 
 router.get('/categories', function (req, res) {
