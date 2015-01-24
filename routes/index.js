@@ -6,7 +6,11 @@ var feedly = require('../model/feedlyModel');
 router.get('/', function(req, res){
     res.send('Good News Everyone its ' + new Date().toString());
 });
-/* GET home page. */
+
+router.get('/healthCheck', function(req, res){
+    res.status(200).send();
+});
+
 router.get('/categories', function (req, res) {
     feedly.getCategories(function (err, result) {
         if (err) {
