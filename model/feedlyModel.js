@@ -15,7 +15,7 @@ var categoreis = [];
 
 var f = new Feedly({
     client_id: 'sandbox',
-    client_secret: '9ZUHFZ9N2ZQ0XM5ERU1Z',
+    client_secret: '8LDQOW8KPYFPCQV2UL6J',
     base: 'http://sandbox.feedly.com',
     port: 8080
 });
