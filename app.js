@@ -24,7 +24,6 @@ app.use(function (req, res, next) {
     req.log = logger.child({requestId: req.requestId});
     next();
 });
-
 //=============================================
 //         Routes
 //=============================================
